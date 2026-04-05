@@ -1,0 +1,21 @@
+spring:
+  application:
+    name: zorvyn
+  datasource:
+    url: ${DB_URL}
+    username: ${DB_USER}
+    password: ${DB_PASSWORD}
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    show-sql: false
+  flyway:
+    enabled: true
+    baseline-on-migrate: true
+    locations: classpath:db/migration
+server:
+  port: 8080
+
+jwt:
+  secret: ${JWT_SECRET}
+  expiration-ms: 86400000
